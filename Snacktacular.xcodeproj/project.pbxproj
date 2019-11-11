@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1B264615236FAC28005390BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B264614236FAC28005390BD /* GoogleService-Info.plist */; };
+		1B86218A23788A1C00C9DF1C /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86218923788A1C00C9DF1C /* Double+roundTo.swift */; };
+		1B86218C237892C600C9DF1C /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86218B237892C600C9DF1C /* UIView+addBorder.swift */; };
+		1B86218E2378BC1100C9DF1C /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86218D2378BC1100C9DF1C /* ReviewTableViewController.swift */; };
+		1BB539662379C43F00692405 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB539652379C43F00692405 /* Review.swift */; };
+		1BB539682379EA2800692405 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB539672379EA2800692405 /* Reviews.swift */; };
+		1BB5396A2379F19700692405 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB539692379F19700692405 /* Photo.swift */; };
+		1BB5396C2379F22700692405 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB5396B2379F22700692405 /* Photos.swift */; };
 		1BD5786B236B6197007C98A3 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5786A236B6197007C98A3 /* Spot.swift */; };
 		1BD5786D236B6296007C98A3 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD5786C236B6296007C98A3 /* Spots.swift */; };
 		3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */; };
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		14C1AE3F889AA1B62C35D5CA /* Pods-Snacktacular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.debug.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.debug.xcconfig"; sourceTree = "<group>"; };
 		1B264614236FAC28005390BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B86218923788A1C00C9DF1C /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
+		1B86218B237892C600C9DF1C /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
+		1B86218D2378BC1100C9DF1C /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		1BB539652379C43F00692405 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		1BB539672379EA2800692405 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		1BB539692379F19700692405 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		1BB5396B2379F22700692405 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		1BD5786A236B6197007C98A3 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		1BD5786C236B6296007C98A3 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		34CD9EF2119C2A832AD19BB2 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,12 +91,19 @@
 			children = (
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				1BD5786A236B6197007C98A3 /* Spot.swift */,
+				1BB539672379EA2800692405 /* Reviews.swift */,
+				1BB539652379C43F00692405 /* Review.swift */,
+				1BB5396B2379F22700692405 /* Photos.swift */,
+				1BB539692379F19700692405 /* Photo.swift */,
 				1BD5786C236B6296007C98A3 /* Spots.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				1B86218D2378BC1100C9DF1C /* ReviewTableViewController.swift */,
+				1B86218923788A1C00C9DF1C /* Double+roundTo.swift */,
+				1B86218B237892C600C9DF1C /* UIView+addBorder.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
@@ -286,14 +307,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB5396A2379F19700692405 /* Photo.swift in Sources */,
+				1BB539682379EA2800692405 /* Reviews.swift in Sources */,
 				3E8390E2206597F600512DEA /* SpotsListViewController.swift in Sources */,
+				1BB5396C2379F22700692405 /* Photos.swift in Sources */,
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
+				1B86218E2378BC1100C9DF1C /* ReviewTableViewController.swift in Sources */,
+				1BB539662379C43F00692405 /* Review.swift in Sources */,
+				1B86218C237892C600C9DF1C /* UIView+addBorder.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				1BD5786B236B6197007C98A3 /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
 				1BD5786D236B6296007C98A3 /* Spots.swift in Sources */,
+				1B86218A23788A1C00C9DF1C /* Double+roundTo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
