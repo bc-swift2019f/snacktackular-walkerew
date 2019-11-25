@@ -234,7 +234,8 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <segue destination="exH-Nc-pkk" kind="presentation" identifier="AddReview" id="sQm-tT-H4X"/>
+                                                <action selector="reviewButtonPressed:" destination="L7d-5i-Cie" eventType="touchUpInside" id="eEH-Qg-of8"/>
+                                                <segue destination="2NK-Bc-3K6" kind="show" identifier="AddReview" id="gIT-Vc-jCm"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HJ-pv-dUi">
@@ -363,7 +364,7 @@
                                             <outletCollection property="starImageCollection" destination="Dh5-N5-IJ1" collectionClass="NSMutableArray" id="bF1-Jp-1VD"/>
                                             <outletCollection property="starImageCollection" destination="7LK-bk-5gT" collectionClass="NSMutableArray" id="dX1-Ah-RTi"/>
                                             <outletCollection property="starImageCollection" destination="6wM-Ie-Ux4" collectionClass="NSMutableArray" id="pvz-oy-jdA"/>
-                                            <segue destination="2NK-Bc-3K6" kind="show" identifier="ShowReview" id="1L6-Yw-kh9"/>
+                                            <segue destination="T2Z-EB-8GD" kind="presentation" identifier="ShowReview" id="uuV-nF-5PQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -501,7 +502,7 @@
                                                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="star-empty"/>
                                                             <connections>
-                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="u0c-Ts-p7U"/>
+                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="ivE-cc-scg"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbI-ed-wh9">
@@ -510,7 +511,7 @@
                                                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="star-empty"/>
                                                             <connections>
-                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="WW2-k5-UeC"/>
+                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="81h-vB-DDA"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-cW-vru">
@@ -519,7 +520,7 @@
                                                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="star-empty"/>
                                                             <connections>
-                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="B6g-Xr-GEK"/>
+                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="xhO-T1-SeI"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMK-Co-G5Z">
@@ -528,7 +529,7 @@
                                                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="star-empty"/>
                                                             <connections>
-                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="6ER-k2-pwf"/>
+                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="oqo-HG-Run"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmy-Kg-5by">
@@ -537,7 +538,7 @@
                                                             <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="star-empty"/>
                                                             <connections>
-                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="D5Z-J4-vQu"/>
+                                                                <action selector="starButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="DK1-ge-UfH"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -589,9 +590,9 @@
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="reviewTitleChanged:" destination="2NK-Bc-3K6" eventType="editingDidEnd" id="dQe-mP-FPv"/>
                                                         <action selector="reviewTitleChanged:" destination="C3J-39-Mr8" eventType="editingChanged" id="hR8-Pl-G8P"/>
-                                                        <action selector="reviewTitleDonePressed:" destination="2NK-Bc-3K6" eventType="editingDidEnd" id="UeO-Xn-G9X"/>
+                                                        <action selector="reviewTitleChanged:" destination="2NK-Bc-3K6" eventType="editingChanged" id="zi0-Qt-Mo1"/>
+                                                        <action selector="reviewTitleDonePressed:" destination="2NK-Bc-3K6" eventType="primaryActionTriggered" id="EDb-lv-lQz"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -677,7 +678,7 @@
                                                         <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="deleteButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="Lrj-c3-c7i"/>
+                                                        <action selector="deleteButtonPressed:" destination="2NK-Bc-3K6" eventType="touchUpInside" id="wgC-CP-U6Y"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -692,47 +693,44 @@
                         </sections>
                         <connections>
                             <outlet property="addressLabel" destination="cjK-T8-tPq" id="m7o-Ft-hDb"/>
-                            <outlet property="dataSource" destination="2NK-Bc-3K6" id="Nhw-pe-Y0S"/>
-                            <outlet property="delegate" destination="2NK-Bc-3K6" id="Ylg-5W-tia"/>
                             <outlet property="nameLabel" destination="u8e-ap-lMT" id="NKq-Dl-Bu8"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="E8U-XT-2zo">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jeg-g4-MdD">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="jeg-g4-MdD">
                             <connections>
-                                <action selector="cancelButtonPressed:" destination="2NK-Bc-3K6" id="Bho-aJ-fWg"/>
+                                <action selector="cancelButtonPressed:" destination="2NK-Bc-3K6" id="tEd-5n-71I"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="o88-o6-OrU">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="o88-o6-OrU">
                             <connections>
-                                <action selector="saveButtonPressed:" destination="2NK-Bc-3K6" id="YJW-w3-znC"/>
+                                <action selector="saveButtonPressed:" destination="2NK-Bc-3K6" id="Jat-vp-BWn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addressLabel" destination="cjK-T8-tPq" id="2KQ-dN-xns"/>
-                        <outlet property="buttonsBackgroundView" destination="SUM-6X-GKk" id="R45-W2-Khg"/>
-                        <outlet property="cancelBarButton" destination="jeg-g4-MdD" id="W18-F4-XPd"/>
-                        <outlet property="deleteButton" destination="tP2-LB-gR6" id="UXm-qW-JHM"/>
-                        <outlet property="nameLabel" destination="u8e-ap-lMT" id="nbL-7f-Kwh"/>
-                        <outlet property="postedByLabel" destination="dC4-x5-kkp" id="GrX-or-z7Y"/>
-                        <outlet property="reviewDateLabel" destination="CuY-hx-NhL" id="Lxd-lm-KIU"/>
-                        <outlet property="reviewTitle" destination="X8d-hI-6ki" id="j94-BC-RvW"/>
-                        <outlet property="reviewView" destination="CVa-Mm-Xj0" id="bBy-g3-MoK"/>
-                        <outlet property="saveBarButton" destination="o88-o6-OrU" id="Vu9-0m-alw"/>
-                        <outlet property="tableView" destination="aZ7-Od-oU2" id="5Uq-EU-JQS"/>
-                        <outletCollection property="starButtonCollection" destination="yIe-GX-ZmC" collectionClass="NSMutableArray" id="gYs-KK-eTz"/>
-                        <outletCollection property="starButtonCollection" destination="bbI-ed-wh9" collectionClass="NSMutableArray" id="KPc-UI-fIS"/>
-                        <outletCollection property="starButtonCollection" destination="LvI-cW-vru" collectionClass="NSMutableArray" id="drz-J8-PA9"/>
-                        <outletCollection property="starButtonCollection" destination="CMK-Co-G5Z" collectionClass="NSMutableArray" id="kt2-kS-O3Q"/>
-                        <outletCollection property="starButtonCollection" destination="Hmy-Kg-5by" collectionClass="NSMutableArray" id="Fe4-SM-Cwd"/>
+                        <outlet property="addressLabel" destination="cjK-T8-tPq" id="sz4-X0-ey7"/>
+                        <outlet property="buttonsBackgroundView" destination="SUM-6X-GKk" id="Scy-4l-s42"/>
+                        <outlet property="cancelBarButton" destination="jeg-g4-MdD" id="Krb-Ke-Fkz"/>
+                        <outlet property="deleteButton" destination="tP2-LB-gR6" id="wfK-g5-IPD"/>
+                        <outlet property="nameLabel" destination="u8e-ap-lMT" id="StW-IZ-HwW"/>
+                        <outlet property="postedByLabel" destination="dC4-x5-kkp" id="dUf-U8-rF2"/>
+                        <outlet property="reviewDateLabel" destination="CuY-hx-NhL" id="6Ip-Vo-ztr"/>
+                        <outlet property="reviewTextView" destination="CVa-Mm-Xj0" id="fwJ-dS-xbS"/>
+                        <outlet property="reviewTitleField" destination="X8d-hI-6ki" id="Oit-7C-8p8"/>
+                        <outlet property="saveBarButton" destination="o88-o6-OrU" id="nCl-2I-hgC"/>
+                        <outletCollection property="starButtonCollection" destination="yIe-GX-ZmC" collectionClass="NSMutableArray" id="ITf-zN-gv7"/>
+                        <outletCollection property="starButtonCollection" destination="bbI-ed-wh9" collectionClass="NSMutableArray" id="RhA-GP-JBJ"/>
+                        <outletCollection property="starButtonCollection" destination="LvI-cW-vru" collectionClass="NSMutableArray" id="37t-Bj-P5P"/>
+                        <outletCollection property="starButtonCollection" destination="CMK-Co-G5Z" collectionClass="NSMutableArray" id="Qqm-rw-YHW"/>
+                        <outletCollection property="starButtonCollection" destination="Hmy-Kg-5by" collectionClass="NSMutableArray" id="C6Z-hL-3mQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoZ-Io-KIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C3J-39-Mr8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3884" y="35.467980295566505"/>
+            <point key="canvasLocation" x="4001" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="16M-u3-wsL">
@@ -787,24 +785,22 @@
             <point key="canvasLocation" x="1249" y="-291"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="4zG-58-5ee">
+        <scene sceneID="N9w-BP-hLy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="exH-Nc-pkk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T2Z-EB-8GD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DxP-4w-anY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fqz-Tz-pXk">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.99283903837203979" green="0.43008232116699219" blue="0.29854875802993774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2NK-Bc-3K6" kind="relationship" relationship="rootViewController" id="0Ro-QC-dyS"/>
+                        <segue destination="2NK-Bc-3K6" kind="relationship" relationship="rootViewController" id="thg-ZP-Vhf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HjU-dL-PsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9Q-OH-AZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959" y="-460"/>
+            <point key="canvasLocation" x="3055" y="-367"/>
         </scene>
     </scenes>
     <resources>
@@ -813,7 +809,7 @@
         <image name="star-white" width="30.666666030883789" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Ro-QC-dyS"/>
-        <segue reference="Zox-RK-nHB"/>
+        <segue reference="gIT-Vc-jCm"/>
+        <segue reference="sl5-aU-Gjj"/>
     </inferredMetricsTieBreakers>
 </document>

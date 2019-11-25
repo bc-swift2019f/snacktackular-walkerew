@@ -70,10 +70,29 @@ class SpotDetailViewController: UIViewController {
         mapView.setRegion(region, animated: true)
         updateUserInterface()
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        reviews.loadData(spot: spot, completed: {self.tableView.reloadData()})
+        reviews.loadData(spot: spot) {
+            self.tableView.reloadData()
+            if self.reviews.reviewArray.count > 0 {
+                var total = 0
+                for review in self.reviews.reviewArray {
+                    total += review.rating
+                }
+                let average = Double(total) / Double(self.reviews.reviewArray.count)
+                self.averageRatingLabel.text = "\(average.roundTo(places: 1))"
+            } else {
+                self.averageRatingLabel.text = "-.-"
+            }
+        }
+        
+        photos.loadData(spot: spot) {
+            self.collectionView.reloadData()
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,6 +124,36 @@ class SpotDetailViewController: UIViewController {
         spot.name = nameField.text!
         spot.address = addressField.text!
         updateUserInterface()
+    }
+    
+    func disableTextEditing() {
+        nameField.backgroundColor = UIColor.clear
+        nameField.isEnabled = false
+        nameField.noBorder()
+        addressField.backgroundColor = UIColor.clear
+        addressField.isEnabled = false
+        addressField.noBorder()
+    }
+    
+    func saveCancelAlert(title: String, message: String, segueIdentifier: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            self.spot.saveData { success in
+                self.saveBarButton.title = "Done"
+                self.cancelBarButton.title = ""
+                self.navigationController?.setToolbarHidden(true, animated: true)
+                self.disableTextEditing()
+                if segueIdentifier == "AddReview" {
+                    self.performSegue(withIdentifier: segueIdentifier, sender: nil)
+                } else {
+                    self.cameraOrLibraryAlert()
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func showAlert(title: String, message: String) {
@@ -152,7 +201,21 @@ class SpotDetailViewController: UIViewController {
     }
 
     @IBAction func photoButtonPressed(_ sender: UIButton) {
-        cameraOrLibraryAlert()
+        if spot.documentID == "" {
+            saveCancelAlert(title: "This Venue Has Not Been Saved", message: "You must save this venue before you can add a photo.", segueIdentifier: "AddPhoto")
+        } else {
+            cameraOrLibraryAlert()
+        }
+    }
+    
+    @IBAction func reviewButtonPressed(_ sender: UIButton) {
+        if spot.documentID == "" {
+            saveCancelAlert(title: "This Venue Has Not Been Saved", message: "You must save this venue before you can review it.", segueIdentifier: "AddReview")
+        } else {
+            performSegue(withIdentifier: "AddReview", sender: nil)
+        }
+        
+        
     }
     
     @IBAction func lookupPlacePressed(_ sender: UIBarButtonItem) {
@@ -297,7 +360,9 @@ extension SpotDetailViewController: UINavigationControllerDelegate, UIImagePicke
         photo.image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         photos.photoArray.append(photo)
         dismiss(animated: true) {
-            self.collectionView.reloadData()
+            photo.saveData(spot: self.spot) { (success) in                
+            }
+            
         }
         
     }
